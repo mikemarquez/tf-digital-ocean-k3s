@@ -17,7 +17,7 @@ sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/
 sudo chmod a+x /usr/local/bin/yq
 
 # Install K3s
-curl -sfL https://get.k3s.io | sh -
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable=traefik" sh -
 
 # Prepare the k3s.yaml for download.  Allows user to access the cluster remotely
 PUBLIC_IP=$(curl ifconfig.co)
